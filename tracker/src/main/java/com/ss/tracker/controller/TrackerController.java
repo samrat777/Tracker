@@ -43,11 +43,13 @@ public class TrackerController {
 	//Search Data
 	@RequestMapping("searchPage")
 	ModelAndView searchIssue(){
+		
 		return new ModelAndView("search");
 	}
 	//Search By Name
 	@RequestMapping("getByName")
 	ModelAndView getByName(String Clientname){
+		System.out.println("get name"+Clientname);
 		List<IssueTracker> nameslist = trackerDao.getByName(Clientname);
 		return new ModelAndView("getname","nameslist",nameslist);
 }
